@@ -1,0 +1,30 @@
+{
+  "name": "meetqyeditor",
+  "version": "0.0.1",
+  "description": "简易的web富文本编辑器",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meetqy/meetqyEditor.git"
+  },
+  "keywords": [
+    "富文本编辑器",
+    "editor",
+    "meetqyEditor"
+  ],
+  "author": "meetqy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/meetqy/meetqyEditor/issues"
+  },
+  "homepage": "https://github.com/meetqy/meetqyEditor#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0"
+  }
+}
