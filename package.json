@@ -30,5 +30,8 @@
     "livereload": "^0.8.0",
     "rollup-plugin-json": "^4.0.0",
     "rollup-watch": "^4.3.1"
+  },
+  "dependencies": {
+    "hoek": "^6.1.3"
   }
 }
