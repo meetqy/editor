@@ -2,15 +2,14 @@ class ToolBar {
   constructor(MEditor) {
     this.MEditor = MEditor;
 
-    this.init();
+    this._el = this.init();
   }
 
   init() {
     let toolbar = document.createElement('div');
-    toolbar.classList.add('toolbar');
+    toolbar.classList.add('m-e-toolbar');
     this.MEditor._el.append(toolbar);
     
-    this._el = toolbar;
     return toolbar;
   }
 }

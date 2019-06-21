@@ -1,5 +1,3 @@
-import styles from '../../assets/styles/main.scss';
-
 // 默认配置
 const defaultArgs = {
   el: '',
@@ -34,7 +32,8 @@ export const _init = function(obj) {
 function initContainer() {
   this.outerDom.setAttribute('style', `width: ${this.width}px;height: ${this.height}px`);
   let el = document.createElement('div');
-  el.id = 'meetqyEditor';
+  el.id = 'meetqy-editor';
+  el.setAttribute('style', `width: ${this.width}px;height: ${this.height}px`);
   this.outerDom.appendChild(el);
   return el;
 }
