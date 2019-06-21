@@ -1,10 +1,31 @@
-const path = require('path');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: './src/index.js',
-  mode: 'development',
+  mode: "development",
+  entry: "./src/index.js",
+
+  module: {
+    
+  },
+
+  devtool: "inline-cheap-source-map",
+
+  devServer: {
+    contentBase: '../demo',
+    compress: true,
+  },
+
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: "meetqyEditor"
+    })
+  ],
+
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, '../demo')
+    filename: "meetqyEditor.js",
+    path: path.resolve(__dirname, "../demo")
   }
 };
