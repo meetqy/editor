@@ -1,10 +1,5 @@
-import './a';
+import MEditor from './core/index';
 
-const arr = [
-  new Promise(() => {}),
-  new Promise(() => {}),
-]
-
-arr.map(val => {
-  console.log(val)
+MEditor({
+  el: document.getElementById('box')
 })
