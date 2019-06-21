@@ -1,4 +1,5 @@
 import MeetqyEditor from './meetqyeditor';
+import '../assets/styles/main.scss';
 
 export default (function() {
   return function(obj) {

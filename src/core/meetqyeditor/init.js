@@ -34,7 +34,7 @@ export const _init = function(obj) {
 function initContainer() {
   this.outerDom.setAttribute('style', `width: ${this.width}px;height: ${this.height}px`);
   let el = document.createElement('div');
-  el.id = styles.meetqyEditor;
+  el.id = 'meetqyEditor';
   this.outerDom.appendChild(el);
   return el;
 }
