@@ -1,11 +1,6 @@
-#meetqy-editor, #meetqy-editor * {
-  box-sizing: border-box;
-}
-
-#meetqy-editor {
+.meetqy-editor {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   border: 1px solid #999;
-  overflow-y: scroll;
 }

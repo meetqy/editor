@@ -33,6 +33,7 @@ function initContainer() {
   this.outerDom.setAttribute('style', `width: ${this.width}px;height: ${this.height}px`);
   let el = document.createElement('div');
   el.id = 'meetqy-editor';
+  el.classList.add('meetqy-editor');
   el.setAttribute('style', `width: ${this.width}px;height: ${this.height}px`);
   this.outerDom.appendChild(el);
   return el;
