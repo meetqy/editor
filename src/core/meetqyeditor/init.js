@@ -24,7 +24,7 @@ export const _init = function(obj) {
   this.height = args.height;
 
   // this.el  MeetqyEditor容器对象
-  this._el = initContainer.bind(this)();
+  return initContainer.bind(this)();
 }
 
 // 初始化容器  在用户自定义的容器里面生成一个自己的容器

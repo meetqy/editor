@@ -18,7 +18,7 @@ export const _mouseup = function() {
   this._select = getSelection();
   if(!this._select.toString()) return;
 
-  this._Rd(this._select).h1();
+  this._Rs(this._select).h1();
 }
 
 export default {

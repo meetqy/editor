@@ -16,6 +16,7 @@ module.exports = {
   },
   rules: {
     indent: ["warn", 2],
-    "no-console": 0
+    "no-console": 0,
+    "no-unused-vars": 1
   }
 };
