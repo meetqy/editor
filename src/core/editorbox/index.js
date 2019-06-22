@@ -1,4 +1,5 @@
 import ReplaceSelect from './ReplaceSelect';
+import eventFn from './eventfn';
 
 class EditorBox {
   constructor(MEditor) {
@@ -6,6 +7,7 @@ class EditorBox {
     this._Rs = ReplaceSelect;
 
     this._el = this._init();
+    this._select;  // 当前选中文本的信息
     this.listenEl();
   }
 
@@ -26,22 +28,9 @@ class EditorBox {
   // 对el进行事件监听
   listenEl() {
     let { _el } = this;
-    _el.addEventListener('keydown', e => {
-      if(!_el.innerHTML) {
-        _el.innerHTML += '<p><br/></p>'
-      }
-    })  
+    _el.addEventListener('keyup', eventFn._keyup.bind(this));
 
-    _el.addEventListener('mousedown', e => {
-
-    })
-
-    _el.addEventListener('mouseup', e => {
-      let select = getSelection();
-      if(!select.toString()) return;
-
-      this._Rd(select).h1();
-    })
+    _el.addEventListener('mouseup', eventFn._mouseup.bind(this));
   }
 }
 
