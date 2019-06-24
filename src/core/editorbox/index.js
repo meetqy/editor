@@ -3,11 +3,11 @@ import eventFn from './eventfn';
 
 class EditorBox {
   constructor(MEditor) {
-    this.MEditor = MEditor;
+    this.md_el = MEditor._el;
     this._Rs = ReplaceSelect;
 
     this._el = this._init();
-    this._select;  // 当前选中文本的信息
+    this._select = null;  // 当前选中文本的信息
     this.listenEl();
   }
 
@@ -17,12 +17,17 @@ class EditorBox {
     let container = document.createElement('div');
     container.classList.add('m-e-container');
     container.setAttribute('contenteditable', true);
-    container.innerHTML = '<p><br/></p>';
+    // container.innerHTML = '<p><br/></p>';
+    container.innerHTML = '<p>这是测试（测试加粗）</p>';
     editorBox.appendChild(container);
 
-    this.MEditor._el.appendChild(editorBox);
+    this.md_el.appendChild(editorBox);
 
     return container;
+  }
+
+  getSelect() {
+    return this._select;
   }
 
   // 对el进行事件监听

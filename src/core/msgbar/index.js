@@ -1,6 +1,6 @@
 class MsgBar {
   constructor(MEditor) {
-    this.MEditor = MEditor;
+    this.md_el = MEditor._el;
 
     this._el = this.init();
   }
@@ -8,7 +8,7 @@ class MsgBar {
   init() {
     let msgBar = document.createElement('div');
     msgBar.classList.add('m-e-msg-bar');
-    this.MEditor._el.appendChild(msgBar);
+    this.md_el.appendChild(msgBar);
 
     return msgBar;
   }
