@@ -1,10 +1,10 @@
-import MEditor from './core/index';
+import Meditor from './core/index';
 
-let m1 = new MEditor({
+let m1 = new Meditor({
   el: '#box1'
 })
 
-// let m2 = new MEditor({
+// let m2 = new Meditor({
 //   el: '#box2'
 // })
 
