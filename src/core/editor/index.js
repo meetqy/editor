@@ -1,18 +1,30 @@
-import createContainer from './createContainer';
+import $ from '../utils/element';
 
 // 编辑器
 class Editor {
-  constructor(config) {
-    this.config = config;
+  constructor(Meditor) {
+    this.Meditor = Meditor;
   }
 
   init() {
-    return this.createContainer();
+    this.el = this._initContainer();
+  }
+
+  // 初始化容器
+  _initContainer() {
+    let { config } = this.Meditor;
+    
+    let box = $(`<div style="width: 100%;height: ${config.height - 80}px;overflow: hidden"></div>`);
+    let editor = $(`<div class="m-e-editor" contenteditable="true"></div>`);
+    box.append(editor);
+
+    return box;
+  }
+
+  // 获取容器
+  getEl() {
+    return this.el;
   }
 }
-
-Object.assign(Editor.prototype, {
-  createContainer: createContainer
-})
 
 export default Editor;

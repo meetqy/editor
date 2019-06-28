@@ -2,6 +2,8 @@ import Toolbar from './toolbar/index';
 import StatusBar from './statusBar/index';
 import Editor from './editor/index';
 import defaultConfig from './defaultConfig';
+import $ from './utils/element';
+import '../assets/styles/main.scss';
 
 class MeetqyEditor {
   constructor(options) {
@@ -14,6 +16,36 @@ class MeetqyEditor {
     this._initEditor(this);
     this._initToolbar(this);
     this._initStatusBar(this);
+
+    this._initContainer();
+  }
+
+  _initContainer() {
+    let $meetqyEditorContainer = this._createContainer();
+    let $eidtor = this.editor.getEl();
+    let $statusBar = this.statusBar.getEl();
+    let $toolbar = this.toobar.getEl();
+
+    $meetqyEditorContainer
+      .append($toolbar)
+      .append($eidtor)
+      .append($statusBar);
+
+    $('#box1').append($meetqyEditorContainer)
+  }
+
+  _createContainer() {
+    let { config } = this;
+    let meetqyEditorContainer = $('<div></div>')
+      .addClass('meetqy-editor')
+      .id('meetqy-editor')
+      .css({
+        width: config.width + 'px',
+        height: config.height + 'px',
+        border: '1px solid #999'
+      })
+
+    return meetqyEditorContainer;
   }
 
   // 初始化编辑器
