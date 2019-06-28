@@ -5,8 +5,9 @@ class Selection {
     
   }
 
-  init() {
-    
+  getRange() {
+    let selection = window.getSelection();
+    console.log(selection)
   }
 }
 

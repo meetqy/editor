@@ -22,7 +22,7 @@ class MeetqyEditor {
 
   _initContainer() {
     let $meetqyEditorContainer = this._createContainer();
-    let $eidtor = this.editor.getEl();
+    let $eidtor = this.editor.getEl(true);
     let $statusBar = this.statusBar.getEl();
     let $toolbar = this.toobar.getEl();
 

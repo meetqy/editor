@@ -29,7 +29,26 @@ class Element {
     return this.el;
   }
 
-  // 追加元素  selector  string || node || Element
+  /**
+   * 监听事件
+   * @param {string} type 事件类型 同时绑定多个事件空格分开   eg: mouseup mousedown
+   * @param {*} listener  事件回调
+   */
+  on(type, listener) {
+    if(!type) return;
+
+    let types = type.split(/\s/);
+    types.forEach(val => {
+      this.el.addEventListener(val, e => {
+        listener && listener(e);
+      })
+    })
+  }
+
+  /**
+   * 追加元素
+   * @param {string || node || Element} selector  追加的元素
+   */
   append(selector) {
     if(selector instanceof Element) {
       selector = selector.html()
@@ -42,6 +61,29 @@ class Element {
     }
 
     return this;
+  }
+  
+  /**
+   * 是否没有子节点 || 有且只有一个满足条件的节点
+   * @param {string} str .class || #id    
+   */
+  isNotChildren(str) {
+    let childs = this.children();
+    if(childs.length > 1) return false;
+    
+    if(!str) { // 是否有子节点
+      return !childs.length;
+    } else { // 有且只有一个满足条件的节点
+      childs
+    }
+  }
+
+  children() {
+    return this.el.children
+  }
+
+  childNodes() {
+    return this.el.childNodes;
   }
 
   // html字符串转node
@@ -65,7 +107,10 @@ class Element {
     return this;
   }
 
-  // 设置id  没有传入id 返回当前el的id
+  /**
+   * 设置id  
+   * @param {string || null} id   没有传入id 返回当前el的id
+   */
   id(id) {
     if(this.el instanceof NodeList || this.el instanceof HTMLCollection) {
       return ;
@@ -77,7 +122,10 @@ class Element {
     return this;
   }
 
-  // 设置css styles object
+  /**
+   * 设置css
+   * @param {object} styles 样式对象
+   */
   css(styles) {
     if(!styles || typeof styles !== 'object' || !Object.keys(styles).length) {
       return;
