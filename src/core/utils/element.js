@@ -25,8 +25,19 @@ class Element {
     }
   }
 
+  // 获取html
   html() {
     return this.el;
+  }
+
+  // 获取text
+  text() {
+    let nodetype = this.el.nodeType;
+    if(nodetype === 3) { // 文本节点 
+      return this.el.nodeValue
+    } else {
+      return this.el.innerText;
+    }
   }
 
   /**
@@ -64,7 +75,7 @@ class Element {
   }
   
   /**
-   * 是否没有子节点 || 有且只有一个满足条件的节点
+   * 是否没有子节点 || 有且只有1个满足条件的节点
    * @param {string} str .class || #id    
    */
   isNotChildren(str) {
@@ -73,8 +84,10 @@ class Element {
     
     if(!str) { // 是否有子节点
       return !childs.length;
-    } else { // 有且只有一个满足条件的节点
-      childs
+    } else { // 有且只有1个满足条件的节点
+      if(childs[0].className && childs[0].className  === str) return true;
+      else if(childs[0].id && childs[0].id === str) return true;
+      else return false;
     }
   }
 

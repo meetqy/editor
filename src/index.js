@@ -8,5 +8,4 @@ let m1 = new Meditor({
 //   el: '#box2'
 // })
 
-console.log(m1)
 // console.log(m2)
