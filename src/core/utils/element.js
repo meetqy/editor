@@ -67,6 +67,14 @@ class Element {
 
     if(typeof selector === 'string') {
       this.el.innerHTML += selector;
+    } else if(selector instanceof Array || selector instanceof NodeList) { // 如果是多个dom同时添加，使用文档片段的方式，减少dom操作次数
+      let arr = Array.apply(null, selector);
+      let docFragment = document.createDocumentFragment();
+      arr.forEach(val => {
+        docFragment.appendChild(val);
+      })
+
+      this.el.appendChild(docFragment);
     } else {
       this.el.appendChild(selector);
     }

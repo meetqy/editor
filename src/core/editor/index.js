@@ -22,7 +22,7 @@ class Editor {
     let { config } = this.Meditor;
     
     let box = $(`<div style="width: 100%;height: ${config.height - 80}px;overflow: hidden"></div>`);
-    let editor = $(`<div class="m-e-editor" contenteditable="true"><p>是你吗说的就是卡三等奖啥课的大健康</p><p>奥斯卡了起舞好久等哈我能起来搜想好</p><p>琼文五十九奥坎上课了我虚拟机恩十九</p><p>阿里为萨达十九按键我卡机我能去吗我</p><p>啊期号说你啊数据库了安居客我能数据</p><p>安居客啥都看觉得是阿迷技巧按什么那</p><p>奥士康加看市地税局艾迪康爱的世界的</p><p>阿卡丽看了请我们问色素你那就按键你</p></div>`);
+    let editor = $(`<div class="m-e-editor" style="box-sizing: content-box" contenteditable="true"><p>是你吗说的就是卡三等奖啥课的大健康</p><p>奥斯卡了起舞好久等哈我能起来搜想好</p><p>琼文五十九奥坎上课了我虚拟机恩十九</p><p>阿里为萨达十九按键我卡机我能去吗我</p><p>啊期号说你啊数据库了安居客我能数据</p><p>安居客啥都看觉得是阿迷技巧按什么那</p><p>奥士康加看市地税局艾迪康爱的世界的</p><p>阿卡丽看了请我们问色素你那就按键你</p></div>`);
     
     box.append(editor);
 

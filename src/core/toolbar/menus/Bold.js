@@ -2,22 +2,22 @@ import $ from '../../utils/element';
 import cmd from '../../command';
 
 class Bold {
-  constructor(selection) {
-    this.bold;
-    this.selection = selection;
+  constructor(Menus) {
+    this.el;
+    this.selection = Menus.selection;
+    this._initIcon = Menus._initIcon;
   }
 
   init() {
-    this.bold = $('<a style="font-weight: bold" href="javascript:;" id="m-e-toolbar-bold">B</a>');
+    this.el = $(`<a class='m-e-a' href="javascript:;"><span class="m-e-font icon-B"></span></a>`);
     this.listener();
 
-
-    return this.bold;
+    return this.el;
   }
 
   // 监听事件
   listener() {
-    this.bold.on('click', e => {
+    this.el.on('click', e => {
       cmd('bold').do();
     })
   }
