@@ -56,6 +56,11 @@ class Element {
     })
   }
 
+  // 获取class
+  className() {
+    return this.html().className;
+  }
+
   /**
    * 追加元素
    * @param {string || node || Element} selector  追加的元素

@@ -8,6 +8,7 @@ import RemoveFormat from './RemoveFormat';
 import JustifyCenter from './JustifyCenter';
 import JustifyRight from './JustifyRight';
 import JustifyLeft from './JustifyLeft';
+import FontSize from './FontSize';
 
 class Menus  {
   constructor(Toolbar) {
@@ -50,7 +51,15 @@ class Menus  {
 
   // 初始化icon
   _initIcon(obj) {
-    return `<a class='m-e-a' title="${obj.desc}" href="javascript:;"><span class="m-e-icon icon-${obj.iconname}"></span></a>`
+    return `<a class='m-e-a m-e-${obj.iconname}' title="${obj.desc}" href="javascript:;"><span class="m-e-icon icon-${obj.iconname}"></span></a>`
+  }
+
+  _initFontSizeUp(obj) {
+    return new FontSize(this).init(obj, 'up');
+  }
+
+  _initFontSizeDown(obj) {
+    return new FontSize(this).init(obj, 'down');
   }
 
   // 居中对齐

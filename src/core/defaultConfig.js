@@ -13,6 +13,8 @@ const DefaultConfig = {
     justify_left: '左对齐',
     justify_center: '居中对齐',
     justify_right: '右对齐',
+    font_size_up: '字体+',
+    font_size_down: '字体-'
   }
 }
 
