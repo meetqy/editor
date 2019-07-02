@@ -1,7 +1,7 @@
 import $ from '../../utils/element';
 import cmd from '../../command';
 
-class Strikethrough {
+class StrikeThrough {
   constructor(Menus) {
     this.el;
     this.selection = Menus.selection;
@@ -25,4 +25,4 @@ class Strikethrough {
 }
 
 
-export default Strikethrough;
+export default StrikeThrough;

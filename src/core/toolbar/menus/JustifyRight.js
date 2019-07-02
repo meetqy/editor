@@ -1,7 +1,7 @@
 import $ from '../../utils/element';
 import cmd from '../../command';
 
-class RemoveFormat {
+class justifyRight {
   constructor(Menus) {
     this.el;
     this.selection = Menus.selection;
@@ -19,10 +19,10 @@ class RemoveFormat {
   // 监听事件
   listener() {
     this.el.on('click', e => {
-      cmd('removeFormat').do();
+      cmd('justifyRight').do();
     })
   }
 }
 
 
-export default RemoveFormat;
+export default justifyRight; 

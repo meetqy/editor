@@ -2,9 +2,10 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const webpack = require("webpack");
+const mode = process.env.NODE_ENV;
 
 module.exports = {
-  mode: "development",
+  mode,
   entry: {
     main: "./src/index.js"
   },
@@ -18,7 +19,7 @@ module.exports = {
 
   output: {
     filename: "[name]_[hash].js",
-    path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, mode==='production' ? "build" : "dist")
   },
 
   plugins: [

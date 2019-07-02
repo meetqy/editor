@@ -1,10 +1,13 @@
 import Bold from './Bold';
-import Strikethrough from './Strikethrough';
+import StrikeThrough from './StrikeThrough';
 import Underline from './Underline';
 import Italic from './Italic';
-import Orderedlist from './Orderedlist';
-import Unorderedlist from './Unorderedlist';
-import Removeformat from './Removeformat';
+import OrderedList from './OrderedList';
+import UnorderedList from './UnorderedList';
+import RemoveFormat from './RemoveFormat';
+import JustifyCenter from './JustifyCenter';
+import JustifyRight from './JustifyRight';
+import JustifyLeft from './JustifyLeft';
 
 class Menus  {
   constructor(Toolbar) {
@@ -21,16 +24,21 @@ class Menus  {
     for(let key in toolbar) {
       let val = toolbar[key];
       if(!val) continue;
-      let iconname = key.toLocaleLowerCase();
+      let lowerKey = key.toLowerCase(); // key转换成小写
 
       // 方法名
-      let fnName = iconname.replace(/^[a-zA-Z]/, str => {
-        return str.toLocaleUpperCase();
-      });
+      let fnName = lowerKey
+        .replace(/^(\w)/, str => {
+          return str.toUpperCase();
+        })
+        .replace(/_(\w)/g, (a, b) => {
+          return b.toUpperCase();
+        })
+
 
       this[fnName] = this[`_init${fnName}`]({
         desc: val,
-        iconname 
+        iconname: lowerKey.replace(/_/g, '-') 
       });
 
       arr.push(this[fnName].html());
@@ -45,14 +53,29 @@ class Menus  {
     return `<a class='m-e-a' title="${obj.desc}" href="javascript:;"><span class="m-e-icon icon-${obj.iconname}"></span></a>`
   }
 
+  // 居中对齐
+  _initJustifyCenter(obj) {
+    return new JustifyCenter(this).init(obj);
+  }
+
+  // 左对齐
+  _initJustifyRight(obj) {
+    return new JustifyRight(this).init(obj);
+  }
+
+  // 右对齐
+  _initJustifyLeft(obj) {
+    return new JustifyLeft(this).init(obj);
+  }
+
   // 加粗
   _initBold(obj) {
     return new Bold(this).init(obj);
   }
 
   // 删除线
-  _initStrikethrough(obj) {
-    return new Strikethrough(this).init(obj);
+  _initStrikeThrough(obj) {
+    return new StrikeThrough(this).init(obj);
   }
 
   // 下划线
@@ -66,18 +89,18 @@ class Menus  {
   }
 
   // 有序列表
-  _initOrderedlist(obj) {
-    return new Orderedlist(this).init(obj);
+  _initOrderedList(obj) {
+    return new OrderedList(this).init(obj);
   }
 
   // 无序列表
-  _initUnorderedlist(obj) {
-    return new Unorderedlist(this).init(obj);
+  _initUnorderedList(obj) {
+    return new UnorderedList(this).init(obj);
   }
 
   // 清除所有格式
-  _initRemoveformat(obj) {
-    return new Removeformat(this).init(obj);
+  _initRemoveFormat(obj) {
+    return new RemoveFormat(this).init(obj);
   }
 }
 
