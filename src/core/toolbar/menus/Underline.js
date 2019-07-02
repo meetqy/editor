@@ -1,15 +1,15 @@
 import $ from '../../utils/element';
 import cmd from '../../command';
 
-// 下划线
-class StrikeThrough {
-  constructor(selection) {
+class Underline {
+  constructor(Menus) {
     this.el;
-    this.selection = selection;
+    this.selection = Menus.selection;
+    this._initIcon = Menus._initIcon;
   }
 
-  init() {
-    this.el = $(`<a href="javascript:;"><span class="m-e-font icon-xiahuaxian"></span></a>`);
+  init(obj) {
+    this.el = $(this._initIcon(obj));
     this.listener();
 
     return this.el;
@@ -24,4 +24,4 @@ class StrikeThrough {
 }
 
 
-export default StrikeThrough;
+export default Underline;

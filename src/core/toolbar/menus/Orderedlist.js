@@ -1,7 +1,7 @@
 import $ from '../../utils/element';
 import cmd from '../../command';
 
-class Strikethrough {
+class OrderedList {
   constructor(Menus) {
     this.el;
     this.selection = Menus.selection;
@@ -19,10 +19,10 @@ class Strikethrough {
   // 监听事件
   listener() {
     this.el.on('click', e => {
-      cmd('strikeThrough').do();
+      cmd('insertOrderedList').do();
     })
   }
 }
 
 
-export default Strikethrough;
+export default OrderedList;

@@ -6,10 +6,11 @@ class Bold {
     this.el;
     this.selection = Menus.selection;
     this._initIcon = Menus._initIcon;
+    
   }
 
-  init() {
-    this.el = $(`<a class='m-e-a' href="javascript:;"><span class="m-e-font icon-B"></span></a>`);
+  init(obj) {
+    this.el = $(this._initIcon(obj));
     this.listener();
 
     return this.el;
