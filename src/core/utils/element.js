@@ -70,6 +70,7 @@ class Element {
       selector = selector.html()
     }
 
+    
     if(typeof selector === 'string') {
       this.el.innerHTML += selector;
     } else if(selector instanceof Array || selector instanceof NodeList) { // 如果是多个dom同时添加，使用文档片段的方式，减少dom操作次数

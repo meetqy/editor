@@ -31,7 +31,7 @@ class MeetqyEditor {
       .append($eidtor)
       .append($statusBar);
 
-    $('#box1').append($meetqyEditorContainer)
+    $(this.config.el).append($meetqyEditorContainer)
   }
 
   _createContainer() {

@@ -43,6 +43,24 @@ class Selection {
     
     return Array.apply(this, fragment.childNodes);
   }
+
+  getStartContainer() {
+    let startElement = this.range.startContainer;
+    if(startElement.nodeType === 3) {
+      return startElement.parentNode
+    } else {
+      return startElement;
+    }
+  }
+
+  getEndContainer() {
+    let endElement = this.range.endContainer;
+    if(endElement.nodeType === 3) {
+      return endElement.parentNode
+    } else {
+      return endElement;
+    }
+  }
 }
 
 

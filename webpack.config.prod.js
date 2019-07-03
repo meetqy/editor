@@ -1,34 +1,20 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const webpack = require("webpack");
-const mode = process.env.NODE_ENV;
 
 module.exports = {
-  mode,
+  mode: 'production',
   entry: {
-    main: "./src/index.js"
+    main: "./src/index.js",
   },
-
-  devServer: {
-    contentBase: path.join(__dirname, "dist"),
-    hot: true,
-  },
-
-  devtool: "cheap-source-map",
-
   output: {
-    filename: "[name]_[hash].js",
-    path: path.resolve(__dirname, mode==='production' ? "build" : "dist")
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'meetqy-editor.min.js',
+    library: 'MeetqyEditor',
+    libraryTarget: 'umd'
   },
 
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      title: "meetqyEditor",
-      template: "./src/index.html"
-    }),
-    new webpack.HotModuleReplacementPlugin(),
   ],
 
   module: {
