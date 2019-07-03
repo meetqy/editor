@@ -22,7 +22,7 @@ class Editor {
     let { config } = this.Meditor;
     
     let box = $(`<div style="width: 100%;height: ${config.height - 80}px;overflow: hidden"></div>`);
-    let editor = $(`<div class="m-e-editor" style="box-sizing: content-box" contenteditable="true"><p>欢迎使用<b>meetqyEditor</b>,这是一款简易的富文本编辑器...</p></div>`);
+    let editor = $(`<div class="m-e-editor" style="box-sizing: content-box" contenteditable="true"><p>欢迎使用<b>meetqyEditor</b>,这是一款简易的web富文本编辑器...</p></div>`);
     
     box.append(editor);
 
