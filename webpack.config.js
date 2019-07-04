@@ -4,21 +4,20 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const webpack = require("webpack");
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: {
     main: "./src/core/index.js",
   },
 
   output: {
-    filename: "[name]_[hash].js",
-    path: path.resolve(__dirname, 'dev'),
+    filename: "meetqy-eidtor.min.js",
+    path: path.resolve(__dirname, 'dist'),
     library: 'MeetqyEditor',
     libraryTarget: 'umd',
     libraryExport: 'default',  // new 类名.defalut的方式，变成  new 类名
   },
 
   devServer: {
-    contentBase: path.join(__dirname, "dev"),
     hot: true,
   },
 
