@@ -5,6 +5,7 @@ import Selection from '../selection';
 class Editor {
   constructor(Meditor) {
     this.Meditor = Meditor;
+    this._autoSaveTimer = '';
 
     this.selection = new Selection();
   }
@@ -20,9 +21,11 @@ class Editor {
   // 初始化容器
   _initContainer() {
     let { config } = this.Meditor;
+    let editorContent = window.localStorage.getItem('editor-content');
+    let defalutText = editorContent ? editorContent : config.default_text;
     
     let box = $(`<div style="width: 100%;height: ${config.height - 80}px;overflow: hidden"></div>`);
-    let editor = $(`<div class="m-e-editor" style="box-sizing: content-box" contenteditable="true"><p>欢迎使用<b>meetqyEditor</b>,这是一款简易的web富文本编辑器...</p></div>`);
+    let editor = $(`<div class="m-e-editor" style="box-sizing: content-box" contenteditable="true">${defalutText}</div>`);
     
     box.append(editor);
 
@@ -48,9 +51,20 @@ class Editor {
       if(e.keyCode == 8) {
         if(this.el.isNotChildren()) this._initDefaultP();
       }
-
-      
+      this.Meditor.statusBar.words.setNum();
+      this._autoSave();
     })
+  }
+
+  _autoSave() {
+    let autoSave = this.Meditor.statusBar.autoSave;
+    autoSave.setStatus(1);
+    this._autoSaveTimer && clearTimeout(this._autoSaveTimer);
+
+    this._autoSaveTimer = setTimeout(() => {
+      window.localStorage.setItem('editor-content', this.el.html().innerHTML);
+      autoSave.setStatus(0);
+    }, 1000)
   }
 
   /**

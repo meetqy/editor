@@ -31,12 +31,16 @@ class Element {
   }
 
   // 获取text
-  text() {
-    let nodetype = this.el.nodeType;
-    if(nodetype === 3) { // 文本节点 
-      return this.el.nodeValue
+  text(str) {
+    if(str) {
+      this.el.innerText = str;
     } else {
-      return this.el.innerText;
+      let nodetype = this.el.nodeType;
+      if(nodetype === 3) { // 文本节点 
+        return this.el.nodeValue
+      } else {
+        return this.el.innerText;
+      }
     }
   }
 

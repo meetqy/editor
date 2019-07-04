@@ -2,6 +2,7 @@ const DefaultConfig = {
   el: '',
   width: 1100,
   height: 450,
+  default_text: '<p>欢迎使用<b>meetqyEditor</b>,这是一款简易的web富文本编辑器...</p>', // 默认显示文字
   toolbar: {                            // 菜单栏配置   配置key是iconfont的名字   icon-key
     bold: '加粗',                       
     strike_through: '删除线',            

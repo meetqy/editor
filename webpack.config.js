@@ -2,9 +2,10 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const webpack = require("webpack");
+const mode = process.env.NODE_ENV;
 
 module.exports = {
-  mode: 'production',
+  mode: mode,
   entry: {
     main: "./src/core/index.js",
   },

@@ -13,9 +13,9 @@ class MeetqyEditor {
   }
 
   _init() {
-    this._initEditor(this);
-    this._initToolbar(this);
-    this._initStatusBar(this);
+    this._initEditor();
+    this._initToolbar();
+    this._initStatusBar();
 
     this._initContainer();
   }
