@@ -1,12 +1,13 @@
 # meetqyEditor
 
 一款简易的web富文本编辑器
-[](./preview.png)
+![](/preview.png)
 
 
 ## 使用
 
 1.引入js文件
+
 2.实例化编辑器
 ```
 new MeetqyEditor({
