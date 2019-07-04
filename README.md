@@ -1,8 +1,8 @@
 # meetqyEditor
 
 一款简易的web富文本编辑器
-![](/preview.png)
 
+![](/preview.png)
 
 ## 使用
 
