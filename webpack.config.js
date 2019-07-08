@@ -30,6 +30,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: packageJson.name,
       description: packageJson.description,
+      keywords: packageJson.keywords.join(' '),
       template: "./src/index.html"
     }),
     new webpack.HotModuleReplacementPlugin(),

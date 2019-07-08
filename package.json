@@ -1,5 +1,5 @@
 {
-  "name": "meetqyeditor",
+  "name": "meetqy-editor",
   "version": "0.0.1",
   "description": "一款简易的web富文本编辑器",
   "directories": {
@@ -18,7 +18,8 @@
   "keywords": [
     "富文本编辑器",
     "editor",
-    "meetqyEditor"
+    "meetqy-editor",
+    "meetqy"
   ],
   "author": "meetqy",
   "license": "MIT",
