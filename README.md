@@ -4,6 +4,8 @@
 
 ![](/preview.png)
 
+[预览地址](https://meetqy.com/meetqyeditor/)
+
 ## 使用
 
 1.引入js文件
