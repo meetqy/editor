@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const webpack = require("webpack");
 const mode = process.env.NODE_ENV;
+const packageJson = require('./package.json');
 
 module.exports = {
   mode: mode,
@@ -27,7 +28,8 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: "meetqyEditor",
+      title: packageJson.name,
+      description: packageJson.description,
       template: "./src/index.html"
     }),
     new webpack.HotModuleReplacementPlugin(),

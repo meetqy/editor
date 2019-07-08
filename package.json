@@ -1,8 +1,7 @@
 {
   "name": "meetqyeditor",
   "version": "0.0.1",
-  "description": "简易的web富文本编辑器",
-  "private": true,
+  "description": "一款简易的web富文本编辑器",
   "directories": {
     "doc": "doc"
   },
