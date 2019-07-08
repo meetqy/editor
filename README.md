@@ -1,10 +1,10 @@
-# meetqyEditor
+# meetqy-editor
 
 一款简易的web富文本编辑器
 
 ![](/preview.png)
 
-[预览地址](https://meetqy.com/meetqyeditor/)
+[预览地址](https://meetqy.com/meetqy-editor/)
 
 ## 使用
 
